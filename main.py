@@ -82,6 +82,8 @@ class PhotoWindow(Gtk.Window):
         if photos_names:
             photo1 = photos_names[0]
             photo2 = photos_names[1]
+            photo1 = photo1.replace(" - ", "\n")
+            photo2 = photo2.replace(" - ", "\n")
             self.label1.set_markup("<span font='18'>{}</span>".format(photo1))
             self.label2.set_markup("<span font='18'>{}</span>".format(photo2))
 
