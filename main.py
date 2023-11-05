@@ -53,6 +53,8 @@ class PhotoWindow(Gtk.Window):
         self.label2.set_max_width_chars(50)
         self.label1.set_valign(Gtk.Align.CENTER)
         self.label2.set_valign(Gtk.Align.CENTER)
+        self.label1.set_justify(Gtk.Justification.CENTER)
+        self.label2.set_justify(Gtk.Justification.CENTER)
         self.label1.set_line_wrap(True)
         self.label2.set_line_wrap(True)
 
