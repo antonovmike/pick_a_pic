@@ -58,7 +58,6 @@ class PhotoWindow(Gtk.Window):
         self.label1.set_line_wrap(True)
         self.label2.set_line_wrap(True)
 
-
     def on_button_clicked(self, widget):
         global photos_names
         photos_names.clear()
@@ -85,7 +84,7 @@ class PhotoWindow(Gtk.Window):
         if len(parts) > 1:
             parts[1] = f'"{parts[1]}"'
         return "\n".join(parts)
-    
+
     def on_answer_clicked(self, widget):
         global photos_names
         if photos_names:
@@ -93,22 +92,6 @@ class PhotoWindow(Gtk.Window):
             photo2 = self.file_names(photos_names[1])
             self.label1.set_markup("<span font='18'>{}</span>".format(photo1))
             self.label2.set_markup("<span font='18'>{}</span>".format(photo2))
-
-#    def on_answer_clicked(self, widget):
-#        global photos_names
-#        if photos_names:
-#            photo1 = photos_names[0]
-#            photo2 = photos_names[1]
-#            photo1 = photo1.replace(" - ", "\n")
-#            photo2 = photo2.replace(" - ", "\n")
-#            parts = photo1.split("\n")
-#            parts[0] = f'"{parts[0]}"'
-#            photo1 = "\n".join(parts)
-#            parts = photo2.split("\n")
-#            parts[1] = f'"{parts[1]}"'
-#            photo1 = "\n".join(parts)
-#            self.label1.set_markup("<span font='18'>{}</span>".format(photo1))
-#            self.label2.set_markup("<span font='18'>{}</span>".format(photo2))
 
 
 win = PhotoWindow()
