@@ -49,6 +49,13 @@ class PhotoWindow(Gtk.Window):
 
         self.label1.set_size_request(450, 50)
         self.label2.set_size_request(450, 50)
+        self.label1.set_max_width_chars(50)
+        self.label2.set_max_width_chars(50)
+        self.label1.set_valign(Gtk.Align.CENTER)
+        self.label2.set_valign(Gtk.Align.CENTER)
+        self.label1.set_line_wrap(True)
+        self.label2.set_line_wrap(True)
+
 
     def on_button_clicked(self, widget):
         global photos_names
@@ -75,8 +82,8 @@ class PhotoWindow(Gtk.Window):
         if photos_names:
             photo1 = photos_names[0]
             photo2 = photos_names[1]
-            self.label1.set_text(photo1)
-            self.label2.set_text(photo2)
+            self.label1.set_markup("<span font='18'>{}</span>".format(photo1))
+            self.label2.set_markup("<span font='18'>{}</span>".format(photo2))
 
 
 win = PhotoWindow()
